@@ -145,6 +145,10 @@ section:not(.hero) {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.about-us .cta-button {
+    margin-top: 20px;
+    display: inline-block;
+}
 /* Car Grid */
 .car-grid {
     display: flex;
@@ -265,4 +269,12 @@ section:not(.hero) {
 
 .contact form button:hover {
     background: #e65c00;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
 }
