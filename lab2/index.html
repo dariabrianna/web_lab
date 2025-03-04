@@ -27,6 +27,8 @@
     📱 Special Mobile Offer: Get 10% Off Your First Rental! 🚗
 </section>
 
+<div class="mascot" id="mascot"></div>
+
 <section id="home" class="hero">
     <h1>Drive in Style – Rent Your Dream Car Today!</h1>
     <p>Luxury, comfort, and affordability all in one place.</p>
@@ -99,6 +101,7 @@
      document.addEventListener("DOMContentLoaded", function() {
         const navToggle = document.querySelector(".nav-toggle");
         const navMenu = document.querySelector(".nav-menu");
+        const mascot = document.getElementById("mascot");
 
         navToggle.addEventListener("click", function() {
             if (navMenu.classList.contains("active")) {
@@ -109,6 +112,11 @@
                 navMenu.style.maxHeight = navMenu.scrollHeight + "px";
             }
         });
+
+        // Delay mascot appearance
+        setTimeout(() => {
+            mascot.classList.add("show-mascot");
+        }, 3000);
     });
 </script>
 
