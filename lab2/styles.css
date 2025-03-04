@@ -15,28 +15,67 @@ h1, h2, h3 {
     text-align: center;
 }
 
-nav {
-    background-color: #333;
-    padding: 15px 0;
-    text-align: center;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 15px 20px;
+    position: relative;
 }
-
-nav ul {
+.navbar-brand {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.nav-menu {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
 }
-
-nav ul li {
-    display: inline;
+.nav-menu li {
     margin: 0 15px;
-    color: white;
 }
-
-nav ul li a {
+.nav-menu a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+}
+
+/* Mobile Dropdown Navigation */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+    }
+    .nav-menu.active {
+        max-height: 300px;
+        z-index: 99;
+    }
+    .nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
 }
 
 /* Hero Section */
@@ -285,4 +324,42 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2em;
+    }
+    .hero p {
+        font-size: 1.2em;
+    }
+    .cta-button {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .car-item {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 40px 15px;
+    }
+    .contact form input, .contact form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
 }

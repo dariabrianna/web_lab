@@ -9,14 +9,17 @@
 <body>
 <header>
     <nav>
-<ul>
-    <li><a href='#home'>Home</a></li>
-    <li><a href='#about'>About</a></li>
-    <li><a href='#fleet'>Fleet</a></li>
-    
-    <li><a href='#testimonials'>Testimonials</a></li>
-    <li><a href='#contact'>Contact</a></li>
-</ul>
+        <div class="navbar">
+            <a href="#home" class="navbar-brand">Car Rental</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-menu">
+                <li><a href='#home'>Home</a></li>
+                <li><a href='#about'>About</a></li>
+                <li><a href='#fleet'>Fleet</a></li>
+                <li><a href='#testimonials'>Testimonials</a></li>
+                <li><a href='#contact'>Contact</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
@@ -88,4 +91,22 @@
     <p>&copy; 2025 Car Rental Co. All Rights Reserved.</p>
 </footer>
 
+<script>
+     document.addEventListener("DOMContentLoaded", function() {
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+
+        navToggle.addEventListener("click", function() {
+            if (navMenu.classList.contains("active")) {
+                navMenu.classList.remove("active");
+                navMenu.style.maxHeight = "0";
+            } else {
+                navMenu.classList.add("active");
+                navMenu.style.maxHeight = navMenu.scrollHeight + "px";
+            }
+        });
+    });
+</script>
+
 </body>
+</html>
